@@ -24,5 +24,14 @@
  `require 'capybara/rspec`
  `require 'rspec'`
  `ENV['RACK_ENV'] = 'test'`
- 
  - Inside the spec directory I created a `features` directory to house all of my feature tests, which I will write using Capybara. My unit tests will be written in a separate folder in vanilla RSpec. 
+
+ ## New concepts
+ - A new concept that we learnt about was the POST/ redirect / GET pattern. It is important to separate POST requests and the rendering of their view. This allows the page shown after a form submission to be reloaded, shared, or bookmarked without ill effects, such as submitting the form another time. 
+ - The way we did this was to use a sinatra session. A session is a short-term information store that lives on the server. It allows basic pieces of information to be stored across multiple requests. 
+ - I added the line `enable :sessions` within my Battle class. 
+ - In the `post '/names'` route I stored the player names in the session instead of assigning them as instance variables. 
+	 `session[:player_1_name] = params[:player_1_name]`
+ - I then redirected to the '/play' route.
+ - To keep my spec folder DRY, I set up a helper class, by creating a new spec folder within the features folder named `web_helpers.rb`. I amended my spec_helper document to require this file. 
+ - To conform with the separation of concerns principle, I  extracted the responsibility of the session to a new class named `Players`. This class makes up part of the model layer of my app. 
