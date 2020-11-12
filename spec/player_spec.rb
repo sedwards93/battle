@@ -16,9 +16,9 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it 'reduces player hp by 10' do
-      expect {teddy.attack(jasper)}.to change{jasper.hp}.by(-10)
-    end
-  end
+  # describe '#attack' do
+  #   it 'reduces player hp by 10' do
+  #     expect {teddy.attack(jasper)}.to change{jasper.hp}.by(-10)
+  #   end
+  # end
 end

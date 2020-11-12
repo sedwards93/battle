@@ -9,10 +9,5 @@ class Player
     @hp = FULL_HEALTH
   end
 
-  def attack(name)
-    name.hp -= 10
-  end
-
-
   
 end
