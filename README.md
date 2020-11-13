@@ -25,7 +25,7 @@
  `require 'rspec'`
  `ENV['RACK_ENV'] = 'test'`
  `Capybara.app = Battle`
- `require require File.join(File.dirname(__FILE__), '..', 'app.rb')`
+ `require File.join(File.dirname(__FILE__), '..', 'app.rb')`
  
  - Inside the spec directory I created a `features` directory to house all of my feature tests, which I will write using Capybara. My unit tests will be written in a separate folder in vanilla RSpec. 
 
