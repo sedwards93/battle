@@ -20,10 +20,13 @@
  - Since the my app is a Rack app, I explicitly set the following in my RSpec helper file:
  `Capybara.app = Battle`
  - I added the following to my spec_helper
- `require 'capybara`
- `require 'capybara/rspec`
+ `require 'capybara'`
+ `require 'capybara/rspec'`
  `require 'rspec'`
  `ENV['RACK_ENV'] = 'test'`
+ `Capybara.app = Battle`
+ `require require File.join(File.dirname(__FILE__), '..', 'app.rb')`
+ 
  - Inside the spec directory I created a `features` directory to house all of my feature tests, which I will write using Capybara. My unit tests will be written in a separate folder in vanilla RSpec. 
 
  ## New concepts
